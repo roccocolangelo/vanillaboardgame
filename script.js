@@ -6,7 +6,7 @@ const modalText = document.getElementById("modalText");
 const closeModalBtn = document.getElementById("closeModal");
 
 const rows = 20;
-const columns = 20;
+const columns = 18;
 const cellWidth = 40;
 const cellHeight = 40;
 const difficulty = 0.3;

@@ -241,7 +241,7 @@ document.querySelector(".close-button").addEventListener("click", () => {
 
 function resetGame() {
     gameOver = false;
-    let timer = 60;
+    timer = 60;
     modal.classList.remove("show");
     randomizeObstacles();
     playerX = 10;

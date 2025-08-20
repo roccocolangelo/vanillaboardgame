@@ -219,6 +219,11 @@ function resetGame() {
   startTimer();
 }
 
+function move(direction) {
+  handleKeyPress({ key: direction });
+}
+
+
 closeModalBtn.addEventListener("click", resetGame);
 
 window.onload = () => {
@@ -227,3 +232,6 @@ window.onload = () => {
   prizeImage.onload = drawGrid;
   initGame();
 };
+
+
+

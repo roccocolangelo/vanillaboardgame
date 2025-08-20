@@ -206,33 +206,38 @@ function checkWin() {
 }
 
 function showModal(message) {
-    modalText.textContent = message;
-    modal.classList.add("show");
+  modalText.textContent = message + "\n💎 Buy gems to get more time!";
+  modal.classList.add("show");
 
-    const paypalContainer = document.getElementById("paypal-button-container");
-    paypalContainer.innerHTML = ""; // Pulisce eventuali bottoni precedenti
+  const paypalContainer = document.getElementById("paypal-button-container");
+  paypalContainer.innerHTML = "";
 
-    paypal.Buttons({
-        createOrder: function(data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '1.00'
-                    }
-                }]
-            });
-        },
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-                alert('Pagamento completato da ' + details.payer.name.given_name);
-                addBonusTime(30);
-                modal.classList.remove("show");
-                gameOver = false;
-                startTimer();
-            });
-        }
-    }).render('#paypal-button-container');
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '1.00'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Pagamento completato da ' + details.payer.name.given_name);
+        addBonusTime(30);
+        modal.classList.remove("show");
+        gameOver = false;
+        startTimer();
+      });
+    }
+  }).render('#paypal-button-container');
 }
+
+// Listener per il pulsante di chiusura
+document.querySelector(".close-button").addEventListener("click", () => {
+  modal.classList.remove("show");
+});
 
 function resetGame() {
     gameOver = false;

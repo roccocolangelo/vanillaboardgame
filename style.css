@@ -28,7 +28,7 @@ canvas {
 }
 
 .modal-content {
-  color: white;
+  color: #ff0000;
   font-size: 78px;
   background: url('asset/modal_bg.jpeg') no-repeat center center;
   background-size: cover;
@@ -37,10 +37,10 @@ canvas {
   border: 5px solid #ffcc00;
   border-radius: 15px;
   width: 600px;
-  height;
   text-align: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  line-height: 156px;
 }
 
 .modal.show {
@@ -110,4 +110,23 @@ canvas {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* Centra il testo nella modale */
+.modal.show #modal-text {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Posiziona il pulsante di chiusura in alto a destra */
+.modal .close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color:white;
 }

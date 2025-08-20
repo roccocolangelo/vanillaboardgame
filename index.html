@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Flappy Lion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body
+  style="background-image: url('asset/bg.jpeg'); background-size: cover; background-position: center; margin: 0; padding: 0;">
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: 100vh;">
+    <div id="timer" class="timer">Time Left: 60 seconds</div>
+    <canvas id="gameCanvas" width="800" height="800" style="display: block;"></canvas>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" style="cursor: pointer; float: right;">×</span>
+        <p id="modalText">You Win!!</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

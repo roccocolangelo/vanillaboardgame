@@ -42,7 +42,7 @@ function initGame() {
         prizeVisible = !prizeVisible;
         drawGrid();
     }, 500);
-    startTimer();
+    // startTimer();
 }
 
 function startTimer() {
@@ -296,9 +296,9 @@ window.addEventListener("load", () => {
     // Close modal on any click
     descriptionModal.addEventListener("click", () => {
         descriptionModal.remove();
+        startTimer();
     });
 });
-
 
 
 

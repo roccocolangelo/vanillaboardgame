@@ -258,6 +258,50 @@ function move(direction) {
 
 closeModalBtn.addEventListener("click", resetGame);
 
+
+// Create and show game description modal on load
+window.addEventListener("load", () => {
+    const descriptionModal = document.createElement("div");
+    descriptionModal.id = "descriptionModal";
+    descriptionModal.style.position = "fixed";
+    descriptionModal.style.top = "0";
+    descriptionModal.style.left = "0";
+    descriptionModal.style.width = "100%";
+    descriptionModal.style.height = "100%";
+    descriptionModal.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+    descriptionModal.style.display = "flex";
+    descriptionModal.style.justifyContent = "center";
+    descriptionModal.style.alignItems = "center";
+    descriptionModal.style.zIndex = "1000";
+
+    const modalContent = document.createElement("div");
+    modalContent.style.backgroundColor = "#fff";
+    modalContent.style.padding = "20px";
+    modalContent.style.borderRadius = "8px";
+    modalContent.style.maxWidth = "500px";
+    modalContent.style.textAlign = "center";
+    modalContent.innerHTML = `
+        <h2>Welcome to the Blakie Game!</h2>
+        <p>Use arrow keys to move your character on a 16x16 grid.</p>
+        <p>Avoid obstacles and reach the prize before time runs out!</p>
+        <p>The prize appears and disappears every 500ms.</p>
+        <p>You have 60 seconds. If time runs out, it's Game Over.</p>
+        <p>You can buy 30 seconds of extra time via PayPal.</p>
+        <p><em>Click anywhere to start playing.</em></p>
+    `;
+
+    descriptionModal.appendChild(modalContent);
+    document.body.appendChild(descriptionModal);
+
+    // Close modal on any click
+    descriptionModal.addEventListener("click", () => {
+        descriptionModal.remove();
+    });
+});
+
+
+
+
 window.onload = () => {
     playerImage.onload = drawGrid;
     obstacleImage.onload = drawGrid;

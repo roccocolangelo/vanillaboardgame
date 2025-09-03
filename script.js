@@ -9,7 +9,7 @@ const rows = 16;
 const columns = 16;
 const cellWidth = 40;
 const cellHeight = 40;
-const difficulty = 0.3;
+const difficulty = 0.45;
 
 let grid = [];
 let playerX = 10;
@@ -17,7 +17,7 @@ let playerY = 10;
 let prizeX = Math.floor(Math.random() * columns);
 let prizeY = Math.floor(Math.random() * rows);
 let prizeVisible = true;
-let timer = 60
+let timer = 45
 let intervalId = null;
 let gameOver = false;
 
@@ -284,7 +284,6 @@ window.addEventListener("load", () => {
         <h2>Welcome to the Blakie Game!</h2>
         <p>Use arrow keys to move your character on a 16x16 grid.</p>
         <p>Avoid obstacles and reach the prize before time runs out!</p>
-        <p>The prize appears and disappears every 500ms.</p>
         <p>You have 60 seconds. If time runs out, it's Game Over.</p>
         <p>You can buy 30 seconds of extra time via PayPal.</p>
         <p><em>Click anywhere to start playing.</em></p>
